@@ -16,7 +16,22 @@
   <li><strong>CSS3</strong> – Styling, layouts, and responsive design</li> 
   <li><strong>JavaScript (Vanilla)</strong> – Dashboard logic, forms, and interactivity</li> </ul>
 <h2>📁 Project Structure</h2> 
-<pre> 📦 AdminSuite/ ├── index.html → Login page ├── dashboard.html → Main dashboard page ├── css/ │ ├── style.css → Login page styles │ └── dashboard.css → Dashboard styles ├── js/ │ ├── login.js → Login logic │ ├── main.js → Global scripts │ ├── utils.js → Utility functions │ ├── products.js → Products module │ ├── customers.js → Customers module │ ├── employees.js → Employees module │ ├── orders.js → Orders module │ └── reports.js → Reports module └── images/ → Optional screenshots or assets </pre>
+<pre> 📦 AdminSuite/
+├── index.html         → Login page
+├── dashboard.html     → Main dashboard page
+├── css/
+│   ├── style.css      → Login page styles
+│   └── dashboard.css  → Dashboard styles
+├── js/
+│   ├── login.js       → Login logic
+│   ├── main.js        → Global scripts
+│   ├── utils.js       → Utility functions
+│   ├── products.js    → Products module
+│   ├── customers.js   → Customers module
+│   ├── employees.js   → Employees module
+│   ├── orders.js      → Orders module
+│   └── reports.js     → Reports module
+└── images/            → screenshots</pre>
 <h2>📌 Notes</h2> <ul> <li>No backend or database is used — front-end only</li> 
   <li>Data is simulated using JavaScript (localStorage if needed)</li> 
   <li>Dashboard is modular and easy to expand with real backend</li> </ul>
