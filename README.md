@@ -24,7 +24,7 @@
 │   └── dashboard.css  → Dashboard styles
 ├── js/
 │   ├── login.js       → Login logic
-│   ├── main.js        → Global scripts
+│   ├── dashboard.js   → Global scripts
 │   ├── utils.js       → Utility functions
 │   ├── products.js    → Products module
 │   ├── customers.js   → Customers module
