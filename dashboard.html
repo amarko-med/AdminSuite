@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-  <link rel="stylesheet" href="css/dashboard.css">
+    <title>CRM Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+<!-- Add Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <body>
      <div class="container">
         <header>
             <div class="logo">
@@ -81,6 +80,128 @@
                 <p data-i18n="view_reports">View business reports</p>
             </div>
         </div>
+
+        <!-- Reports Dashboard Section -->
+        <section class="reports-dashboard">
+            <h2 style="margin-bottom: 20px;" data-i18n="reports">Reports</h2>
+            
+            <!-- KPI Cards -->
+         <div class="reports-kpi-grid">
+    <div class="kpi-card" style="border-top: 4px solid var(--success-color);">
+        <div class="kpi-icon" style="background-color: rgba(46, 204, 113, 0.2); color: var(--success-color);">
+            <i class="fas fa-dollar-sign"></i>
+        </div>
+        <div class="kpi-value" id="kpi-total-revenue">$0.00</div>
+        <div class="kpi-label" data-i18n="total_revenue">Total Revenue</div>
+    </div>
+    
+    <div class="kpi-card" style="border-top: 4px solid var(--primary-color);">
+        <div class="kpi-icon" style="background-color: rgba(52, 152, 219, 0.2); color: var(--primary-color);">
+            <i class="fas fa-boxes"></i>
+        </div>
+        <div class="kpi-value" id="kpi-inventory-value">$0.00</div>
+        <div class="kpi-label" data-i18n="inventory_value">Inventory Value</div>
+    </div>
+    
+    <div class="kpi-card" style="border-top: 4px solid var(--warning-color);">
+        <div class="kpi-icon" style="background-color: rgba(243, 156, 18, 0.2); color: var(--warning-color);">
+            <i class="fas fa-chart-line"></i>
+        </div>
+        <div class="kpi-value" id="kpi-avg-order">$0.00</div>
+        <div class="kpi-label">Average Order Value</div>
+    </div>
+    
+    <div class="kpi-card" style="border-top: 4px solid var(--accent-color);">
+        <div class="kpi-icon" style="background-color: rgba(228, 57, 208, 0.2); color: var(--accent-color);">
+            <i class="fas fa-calendar-alt"></i>
+        </div>
+        <div class="kpi-value" id="kpi-month-orders">0</div>
+        <div class="kpi-label">Orders This Month</div>
+    </div>
+</div>
+            
+            <!-- Tables Section -->
+            <div class="reports-tables-grid">
+                <!-- Recent Orders Table -->
+                <div class="table-card">
+                    <div class="table-header">
+                        <h3 data-i18n="recent_orders">Recent Orders</h3>
+                        <button class="btn btn-primary" id="refresh-reports">Refresh</button>
+                    </div>
+                    <div class="table-container">
+                        <table id="recentOrdersTable">
+                            <thead>
+                                <tr>
+                                    <th data-i18n="date">Date</th>
+                                    <th data-i18n="customer">Customer</th>
+                                    <th data-i18n="total">Total</th>
+                                    <th data-i18n="items">Items</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Top Products Table -->
+                <div class="table-card">
+                    <div class="table-header">
+                        <h3>Top-Selling Products</h3>
+                    </div>
+                    <div class="table-container">
+                        <table id="topProductsTable">
+                            <thead>
+                                <tr>
+                                    <th data-i18n="product">Product</th>
+                                    <th>Units Sold</th>
+                                    <th data-i18n="revenue">Revenue</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Customer Profitability Table -->
+                <div class="table-card table-card-full">
+                    <div class="table-header">
+                        <h3>Customer Profitability</h3>
+                    </div>
+                    <div class="table-container">
+                        <table id="customerProfitTable">
+                            <thead>
+                                <tr>
+                                    <th data-i18n="customer">Customer</th>
+                                    <th data-i18n="total_orders">Total Orders</th>
+                                    <th class="sortable" data-sort="total">Total Spent ▾</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Charts Section -->
+            <div class="reports-charts-grid">
+                <div class="chart-card">
+                    <h3>Monthly Revenue</h3>
+                    <div class="chart-container">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card">
+                    <h3>Revenue by Category</h3>
+                    <div class="chart-container">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Products Module -->
         <div id="productsModule" class="module">
@@ -375,18 +496,13 @@
         <!-- Notification Container -->
         <div id="notification" class="notification" style="display: none;"></div>
     </div>
-
-  <!-- JavaScript files -->
-   <script src="js/utils.js"></script>
+<script src="js/utils.js"></script>
 <script src="js/login.js"></script>
 <script src="js/products.js"></script>
 <script src="js/customers.js"></script>
 <script src="js/employees.js"></script>
 <script src="js/orders.js"></script>
 <script src="js/reports.js"></script>
-<script src="js/main.js"></script>
-
+<script src="js/dashboard.js"></script>
 </body>
 </html>
-
-
