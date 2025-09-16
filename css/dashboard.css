@@ -27,6 +27,20 @@
             --shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
+        body, input, select, textarea, table, th, td, .kpi-card, .stat-card, .dashboard-tile, .module-content, .table-card, .login-container, .group label {
+            color: var(--text-color);
+            background-color: var(--card-bg);
+        }
+
+         .dark-mode tr:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+         input, select, textarea {
+            color: var(--text-color);
+            background-color: var(--card-bg);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -795,4 +809,5 @@
             font-size: 0.9em;
             margin-top: 5px;
             display: block;
+
         }
