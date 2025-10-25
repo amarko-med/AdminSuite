@@ -12,6 +12,17 @@
   Ein modernes CRM-Dashboard zur Verwaltung von Produkten, Kunden, Mitarbeitern und Bestellungen mit einer sauberen, interaktiven Benutzeroberfläche.
 </p>
 
+<h2>📸 Screenshots</h2>
+
+<p>
+  <img src="Images/Screenshot%202025-10-25%20151948.png" alt="1" width="35%">
+  <img src="Images/Screenshot%202025-10-25%20151910.png" alt="2" width="49%">
+  <img src="Images/Screenshot%202025-10-25%20151800.png" alt="3" width="35%">
+  <img src="Images/Screenshot%202025-10-25%20151706.png" alt="4" width="45%">
+
+</p>
+
+
 <h2>✨ Funktionen</h2>
 <ul>
   <li>Login-Seite mit Frontend-Authentifizierung</li>
