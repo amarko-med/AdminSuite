@@ -70,11 +70,9 @@
   <li>Dashboard ist modular und leicht mit einem echten Backend erweiterbar</li>
 </ul>
 
-<h2>✍️ Autor</h2>
-<p>
-  <strong>MED Amarko</strong><br>
-  <a href="https://github.com/amarko-med">GitHub-Profil</a>
-</p>
+## 📩 Kontakt
+
+##  E-Mail: [amarkouchi5@gmail.com](mailto:amarkouchi5@gmail.com)
 
 <h2>📃 Lizenz</h2>
 <p>MIT — frei verwendbar und anpassbar für beliebige Zwecke.</p>
